@@ -174,6 +174,54 @@ window.addEventListener('load', () => {
 });
 
 // ========================================
+// Gallery Accordion
+// ========================================
+const gallerySections = document.querySelectorAll('.gallery-section-header');
+
+gallerySections.forEach(header => {
+    header.addEventListener('click', () => {
+        const content = header.nextElementSibling;
+        const isActive = header.classList.contains('active');
+
+        // Toggle active state
+        header.classList.toggle('active');
+        content.classList.toggle('active');
+
+        // Scroll to section if opening
+        if (!isActive) {
+            setTimeout(() => {
+                header.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 100);
+        }
+    });
+});
+
+// Gallery Category Buttons (for future filtering if needed)
+const galleryCatBtns = document.querySelectorAll('.gallery-cat-btn');
+
+galleryCatBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        // Remove active from all buttons
+        galleryCatBtns.forEach(b => b.classList.remove('active'));
+        // Add active to clicked button
+        btn.classList.add('active');
+
+        const category = btn.getAttribute('data-category');
+
+        // If "all" is selected, show all sections
+        if (category === 'all') {
+            document.querySelectorAll('.gallery-section').forEach(section => {
+                section.style.display = 'block';
+            });
+        } else {
+            // Filter sections based on category
+            // This is a placeholder for future enhancement
+            console.log('Filtering by:', category);
+        }
+    });
+});
+
+// ========================================
 // Console Info
 // ========================================
 console.log('%cLong Table - Agencja Cateringowo-Artystyczna', 'font-size: 16px; font-weight: bold; color: #C41E3A;');

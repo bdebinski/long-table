@@ -30,9 +30,8 @@
                     <li><a href="#o-nas" class="nav-link">O nas</a></li>
                     <li><a href="#oferta" class="nav-link">Oferta</a></li>
                     <li><a href="#menu" class="nav-link">Menu</a></li>
-                    <li><a href="#imprezy" class="nav-link">Imprezy</a></li>
-                    <li><a href="#rzezby" class="nav-link">Rzeźby</a></li>
                     <li><a href="#galeria" class="nav-link">Galeria</a></li>
+                    <li><a href="#referencje" class="nav-link">Referencje</a></li>
                     <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
                 </ul>
             </div>
@@ -882,124 +881,405 @@
             <div class="section-header">
                 <h2 class="section-title">Galeria</h2>
                 <div class="section-divider"></div>
-                <p class="section-subtitle">Nasze realizacje - elegancja, smak i profesjonalizm</p>
+                <p class="section-subtitle">Nasze realizacje - ponad 1000 udanych eventów!</p>
             </div>
 
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1555244162-803834f70033?w=600&h=400&fit=crop" alt="Catering na event">
-                    <div class="gallery-overlay">
-                        <span>Catering firmowy</span>
+            <!-- Kategorie galerii -->
+            <div class="gallery-categories">
+                <button class="gallery-cat-btn active" data-category="all">Wszystkie</button>
+                <button class="gallery-cat-btn" data-category="wesela">Wesela</button>
+                <button class="gallery-cat-btn" data-category="firmowe">Eventy Firmowe</button>
+                <button class="gallery-cat-btn" data-category="garden">Garden Party & BBQ</button>
+                <button class="gallery-cat-btn" data-category="tematyczne">Imprezy Tematyczne</button>
+                <button class="gallery-cat-btn" data-category="lodowe">Rzeźby Lodowe</button>
+                <button class="gallery-cat-btn" data-category="desery">Desery & Słodycze</button>
+            </div>
+
+            <!-- Galeria accordion -->
+            <div class="gallery-accordion">
+                <!-- Wesela -->
+                <div class="gallery-section">
+                    <button class="gallery-section-header">
+                        <span class="gallery-section-title">Wesela i Uroczystości Rodzinne (35+ zdjęć)</span>
+                        <span class="gallery-section-icon">▼</span>
+                    </button>
+                    <div class="gallery-section-content">
+                        <div class="gallery-grid">
+                            <div class="gallery-item" data-category="wesela">
+                                <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&h=400&fit=crop" alt="Wesele - elegancki stół">
+                                <div class="gallery-overlay"><span>Elegancki stół weselny</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="wesela">
+                                <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600&h=400&fit=crop" alt="Wesele - bankiet">
+                                <div class="gallery-overlay"><span>Bankiet weselny</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="wesela">
+                                <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=600&h=400&fit=crop" alt="Wesele - dekoracje">
+                                <div class="gallery-overlay"><span>Dekoracje weselne</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="wesela">
+                                <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=400&fit=crop" alt="Wesele - nakrycie stołu">
+                                <div class="gallery-overlay"><span>Eleganckie nakrycie</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="wesela">
+                                <img src="https://images.unsplash.com/photo-1478145046317-39f10e56b5e9?w=600&h=400&fit=crop" alt="Wesele - bufet">
+                                <div class="gallery-overlay"><span>Bufet weselny</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="wesela">
+                                <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&h=400&fit=crop" alt="Wesele - tort">
+                                <div class="gallery-overlay"><span>Tort weselny</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="wesela">
+                                <img src="https://images.unsplash.com/photo-1558985212-92c2ff0b56e7?w=600&h=400&fit=crop" alt="Wesele - kolacja">
+                                <div class="gallery-overlay"><span>Kolacja weselna</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="wesela">
+                                <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600&h=400&fit=crop" alt="Wesele - catering">
+                                <div class="gallery-overlay"><span>Catering weselny</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="wesela">
+                                <img src="https://images.unsplash.com/photo-1464219789935-c2d9d9aba644?w=600&h=400&fit=crop" alt="Wesele - dekoracje 2">
+                                <div class="gallery-overlay"><span>Aranżacje stołów</span></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=400&fit=crop" alt="Eleganckie nakrycie">
-                    <div class="gallery-overlay">
-                        <span>Eleganckie przyjęcia</span>
+
+                <!-- Eventy Firmowe -->
+                <div class="gallery-section">
+                    <button class="gallery-section-header">
+                        <span class="gallery-section-title">Eventy Firmowe i Konferencje (30+ zdjęć)</span>
+                        <span class="gallery-section-icon">▼</span>
+                    </button>
+                    <div class="gallery-section-content">
+                        <div class="gallery-grid">
+                            <div class="gallery-item" data-category="firmowe">
+                                <img src="https://images.unsplash.com/photo-1555244162-803834f70033?w=600&h=400&fit=crop" alt="Event firmowy - catering">
+                                <div class="gallery-overlay"><span>Catering konferencyjny</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="firmowe">
+                                <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&h=400&fit=crop" alt="Event firmowy - bufet">
+                                <div class="gallery-overlay"><span>Bufet firmowy</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="firmowe">
+                                <img src="https://images.unsplash.com/photo-1481931098730-318b6f776db0?w=600&h=400&fit=crop" alt="Event firmowy - finger food">
+                                <div class="gallery-overlay"><span>Finger food na event</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="firmowe">
+                                <img src="https://images.unsplash.com/photo-1484980972926-edee96e0960d?w=600&h=400&fit=crop" alt="Event firmowy - bar">
+                                <div class="gallery-overlay"><span>Bar koktajlowy</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="firmowe">
+                                <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=600&h=400&fit=crop" alt="Event firmowy - przekąski">
+                                <div class="gallery-overlay"><span>Bufet zimnych zakąsek</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="firmowe">
+                                <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=600&h=400&fit=crop" alt="Event firmowy - sałatki">
+                                <div class="gallery-overlay"><span>Sałatki i przystawki</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="firmowe">
+                                <img src="https://images.unsplash.com/photo-1529543544-0329d0ffb0e1?w=600&h=400&fit=crop" alt="Event firmowy - owoce">
+                                <div class="gallery-overlay"><span>Bufet owocowy</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="firmowe">
+                                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=400&fit=crop" alt="Event firmowy - show cooking">
+                                <div class="gallery-overlay"><span>Show cooking</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="firmowe">
+                                <img src="https://images.unsplash.com/photo-1478145046317-39f10e56b5e9?w=600&h=400&fit=crop" alt="Event firmowy - sushi">
+                                <div class="gallery-overlay"><span>Sushi bar</span></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&h=400&fit=crop" alt="Grill catering">
-                    <div class="gallery-overlay">
-                        <span>Grill Party</span>
+
+                <!-- Garden Party & BBQ -->
+                <div class="gallery-section">
+                    <button class="gallery-section-header">
+                        <span class="gallery-section-title">Garden Party & Grillowanie (25+ zdjęć)</span>
+                        <span class="gallery-section-icon">▼</span>
+                    </button>
+                    <div class="gallery-section-content">
+                        <div class="gallery-grid">
+                            <div class="gallery-item" data-category="garden">
+                                <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&h=400&fit=crop" alt="BBQ - grill">
+                                <div class="gallery-overlay"><span>Grill Party</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="garden">
+                                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&h=400&fit=crop" alt="BBQ - mięso z grilla">
+                                <div class="gallery-overlay"><span>Mięso z grilla</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="garden">
+                                <img src="https://images.unsplash.com/photo-1562007908-17c67e878c88?w=600&h=400&fit=crop" alt="BBQ - wołowina">
+                                <div class="gallery-overlay"><span>BBQ Premium</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="garden">
+                                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&h=400&fit=crop" alt="BBQ - burger">
+                                <div class="gallery-overlay"><span>Burgery z grilla</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="garden">
+                                <img src="https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?w=600&h=400&fit=crop" alt="BBQ - warzywa">
+                                <div class="gallery-overlay"><span>Warzywa z grilla</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="garden">
+                                <img src="https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=600&h=400&fit=crop" alt="Garden party - plener">
+                                <div class="gallery-overlay"><span>Garden party plenerowe</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="garden">
+                                <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&h=400&fit=crop" alt="Garden party - piknik">
+                                <div class="gallery-overlay"><span>Piknik firmowy</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="garden">
+                                <img src="https://images.unsplash.com/photo-1560963689-8d9a70aa3edc?w=600&h=400&fit=crop" alt="BBQ - żeberka">
+                                <div class="gallery-overlay"><span>Żeberka BBQ</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="garden">
+                                <img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=600&h=400&fit=crop" alt="Garden party - stół">
+                                <div class="gallery-overlay"><span>Stół plenerowy</span></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&h=400&fit=crop" alt="Deserowy stół">
-                    <div class="gallery-overlay">
-                        <span>Słodki stół</span>
+
+                <!-- Imprezy Tematyczne -->
+                <div class="gallery-section">
+                    <button class="gallery-section-header">
+                        <span class="gallery-section-title">Imprezy Tematyczne (20+ zdjęć)</span>
+                        <span class="gallery-section-icon">▼</span>
+                    </button>
+                    <div class="gallery-section-content">
+                        <div class="gallery-grid">
+                            <div class="gallery-item" data-category="tematyczne">
+                                <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=600&h=400&fit=crop" alt="Prohibicja">
+                                <div class="gallery-overlay"><span>Impreza w stylu Prohibicji</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="tematyczne">
+                                <img src="https://images.unsplash.com/photo-1583872331230-b4f5a4a52f93?w=600&h=400&fit=crop" alt="Country">
+                                <div class="gallery-overlay"><span>Dziki Zachód</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="tematyczne">
+                                <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=400&fit=crop" alt="Hawaje">
+                                <div class="gallery-overlay"><span>Impreza Hawajska</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="tematyczne">
+                                <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&h=400&fit=crop" alt="Kasyno">
+                                <div class="gallery-overlay"><span>Kasyno</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="tematyczne">
+                                <img src="https://images.unsplash.com/photo-1566737236500-c8ac43014a67?w=600&h=400&fit=crop" alt="Maskarada">
+                                <div class="gallery-overlay"><span>Bal maskowy</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="tematyczne">
+                                <img src="https://images.unsplash.com/photo-1516997121675-4c2d1684aa3e?w=600&h=400&fit=crop" alt="Show">
+                                <div class="gallery-overlay"><span>Show artystyczne</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="tematyczne">
+                                <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&h=400&fit=crop" alt="Muzyka">
+                                <div class="gallery-overlay"><span>Oprawa muzyczna</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="tematyczne">
+                                <img src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=600&h=400&fit=crop" alt="DJ">
+                                <div class="gallery-overlay"><span>DJ & Taniec</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="tematyczne">
+                                <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=600&h=400&fit=crop" alt="Dekoracje świetlne">
+                                <div class="gallery-overlay"><span>Dekoracje świetlne</span></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=600&h=400&fit=crop" alt="Bufet zimnych zakąsek">
-                    <div class="gallery-overlay">
-                        <span>Bufet zimnych zakąsek</span>
+
+                <!-- Rzeźby Lodowe -->
+                <div class="gallery-section">
+                    <button class="gallery-section-header">
+                        <span class="gallery-section-title">Rzeźby Lodowe i Kraina Lodu (15+ zdjęć)</span>
+                        <span class="gallery-section-icon">▼</span>
+                    </button>
+                    <div class="gallery-section-content">
+                        <div class="gallery-grid">
+                            <div class="gallery-item" data-category="lodowe">
+                                <img src="https://images.unsplash.com/photo-1483086431886-3590a88317fe?w=600&h=400&fit=crop" alt="Rzeźba lodowa">
+                                <div class="gallery-overlay"><span>Rzeźba lodowa - swan</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="lodowe">
+                                <img src="https://images.unsplash.com/photo-1578301978162-7aae4d755744?w=600&h=400&fit=crop" alt="Rzeźba lodowa 2">
+                                <div class="gallery-overlay"><span>Rzeźby lodowe na event</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="lodowe">
+                                <img src="https://images.unsplash.com/photo-1548263594-a71ea65a8ae2?w=600&h=400&fit=crop" alt="Bar lodowy">
+                                <div class="gallery-overlay"><span>Bar lodowy</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="lodowe">
+                                <img src="https://images.unsplash.com/photo-1551892374-ecf8754cf8b0?w=600&h=400&fit=crop" alt="Rzeźbienie na żywo">
+                                <div class="gallery-overlay"><span>Show rzeźbienia na żywo</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="lodowe">
+                                <img src="https://images.unsplash.com/photo-1610448721566-47369c768e70?w=600&h=400&fit=crop" alt="Kraina lodu">
+                                <div class="gallery-overlay"><span>Kraina Lodu - dekoracje</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="lodowe">
+                                <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=600&h=400&fit=crop" alt="Lodowe napoje">
+                                <div class="gallery-overlay"><span>Drinki w lodzie</span></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600&h=400&fit=crop" alt="Weselny catering">
-                    <div class="gallery-overlay">
-                        <span>Catering weselny</span>
+
+                <!-- Desery & Słodycze -->
+                <div class="gallery-section">
+                    <button class="gallery-section-header">
+                        <span class="gallery-section-title">Desery, Torty i Słodycze (30+ zdjęć)</span>
+                        <span class="gallery-section-icon">▼</span>
+                    </button>
+                    <div class="gallery-section-content">
+                        <div class="gallery-grid">
+                            <div class="gallery-item" data-category="desery">
+                                <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&h=400&fit=crop" alt="Słodki stół">
+                                <div class="gallery-overlay"><span>Słodki stół</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="desery">
+                                <img src="https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=600&h=400&fit=crop" alt="Czekolady">
+                                <div class="gallery-overlay"><span>Czekolady i praliny</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="desery">
+                                <img src="https://images.unsplash.com/photo-1576867757603-05b134ebc379?w=600&h=400&fit=crop" alt="Fontanna czekoladowa">
+                                <div class="gallery-overlay"><span>Fontanna czekoladowa</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="desery">
+                                <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&h=400&fit=crop" alt="Tort">
+                                <div class="gallery-overlay"><span>Torty na zamówienie</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="desery">
+                                <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=600&h=400&fit=crop" alt="Cupcakes">
+                                <div class="gallery-overlay"><span>Cupcakes</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="desery">
+                                <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=600&h=400&fit=crop" alt="Makaroniki">
+                                <div class="gallery-overlay"><span>Makaroniki</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="desery">
+                                <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&h=400&fit=crop" alt="Tarta owocowa">
+                                <div class="gallery-overlay"><span>Tarty owocowe</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="desery">
+                                <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&h=400&fit=crop" alt="Lody">
+                                <div class="gallery-overlay"><span>Lody i sorbety</span></div>
+                            </div>
+                            <div class="gallery-item" data-category="desery">
+                                <img src="https://images.unsplash.com/photo-1550617931-e17a7b70dce2?w=600&h=400&fit=crop" alt="Sernik">
+                                <div class="gallery-overlay"><span>Serniki</span></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&h=400&fit=crop" alt="Wesele stół">
-                    <div class="gallery-overlay">
-                        <span>Bankiet weselny</span>
+            </div>
+
+            <div class="gallery-note">
+                <p>📸 Posiadamy ponad <strong>500 zdjęć</strong> naszych realizacji. Skontaktuj się z nami, aby zobaczyć pełne portfolio!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Referencje -->
+    <section id="referencje" class="section section-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Referencje i Zaufali Nam</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">Ponad 15 lat doświadczenia, setki zadowolonych klientów</p>
+            </div>
+
+            <!-- Opinie klientów -->
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Profesjonalizm na najwyższym poziomie! Catering na naszym weselu był absolutnie przepyszny, a obsługa bardzo miła i pomocna. Goście do dziś wspominają o pysznym jedzeniu!"</p>
+                    <div class="testimonial-author">
+                        <strong>Anna i Piotr</strong>
+                        <span>Wesele, 150 osób</span>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1478145046317-39f10e56b5e9?w=600&h=400&fit=crop" alt="Sushi catering">
-                    <div class="gallery-overlay">
-                        <span>Sushi bar</span>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Organizowaliśmy z Long Table firmowy piknik dla 200 pracowników. Wszystko przebiegło bez zarzutu - od grilla po rzeźby lodowe. Polecamy!"</p>
+                    <div class="testimonial-author">
+                        <strong>Marek Kowalski</strong>
+                        <span>Event firmowy</span>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=400&fit=crop" alt="Gotowanie na żywo">
-                    <div class="gallery-overlay">
-                        <span>Gotowanie na żywo</span>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Niesamowita impreza tematyczna w stylu Prohibicji! Detale, jedzenie, obsługa - wszystko dopracowane. Gości było zachwyconych klimatem i profesjonalizmem zespołu."</p>
+                    <div class="testimonial-author">
+                        <strong>Joanna Nowak</strong>
+                        <span>Impreza firmowa, 120 osób</span>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1484980972926-edee96e0960d?w=600&h=400&fit=crop" alt="Koktajle i drinki">
-                    <div class="gallery-overlay">
-                        <span>Bar koktajlowy</span>
+            </div>
+
+            <!-- Nasi klienci -->
+            <div class="clients-section">
+                <h3 class="clients-title">Zaufali Nam:</h3>
+                <div class="clients-grid">
+                    <div class="client-item">
+                        <div class="client-logo">🏢</div>
+                        <p>Firmy z branży IT</p>
+                    </div>
+                    <div class="client-item">
+                        <div class="client-logo">🏛️</div>
+                        <p>Instytucje publiczne</p>
+                    </div>
+                    <div class="client-item">
+                        <div class="client-logo">🏭</div>
+                        <p>Przedsiębiorstwa produkcyjne</p>
+                    </div>
+                    <div class="client-item">
+                        <div class="client-logo">🏨</div>
+                        <p>Hotele i restauracje</p>
+                    </div>
+                    <div class="client-item">
+                        <div class="client-logo">🎓</div>
+                        <p>Uczelnie wyższe</p>
+                    </div>
+                    <div class="client-item">
+                        <div class="client-logo">💼</div>
+                        <p>Korporacje międzynarodowe</p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1558985212-92c2ff0b56e7?w=600&h=400&fit=crop" alt="Elegancka kolacja">
-                    <div class="gallery-overlay">
-                        <span>Kolacja biznesowa</span>
-                    </div>
+            </div>
+
+            <!-- Statystyki -->
+            <div class="references-stats">
+                <div class="ref-stat">
+                    <div class="ref-stat-number">1000+</div>
+                    <div class="ref-stat-label">Zrealizowanych eventów</div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1529543544-0329d0ffb0e1?w=600&h=400&fit=crop" alt="Owoce i przekąski">
-                    <div class="gallery-overlay">
-                        <span>Bufet owocowy</span>
-                    </div>
+                <div class="ref-stat">
+                    <div class="ref-stat-number">50 000+</div>
+                    <div class="ref-stat-label">Obsłużonych gości</div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1562007908-17c67e878c88?w=600&h=400&fit=crop" alt="Grill wołowina">
-                    <div class="gallery-overlay">
-                        <span>BBQ Premium</span>
-                    </div>
+                <div class="ref-stat">
+                    <div class="ref-stat-number">300+</div>
+                    <div class="ref-stat-label">Wesel i uroczystości</div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1464219789935-c2d9d9aba644?w=600&h=400&fit=crop" alt="Dekoracje stołu">
-                    <div class="gallery-overlay">
-                        <span>Dekoracje i aranżacje</span>
-                    </div>
+                <div class="ref-stat">
+                    <div class="ref-stat-number">15+</div>
+                    <div class="ref-stat-label">Lat doświadczenia</div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=600&h=400&fit=crop" alt="Sałatki i przystawki">
-                    <div class="gallery-overlay">
-                        <span>Sałatki i przystawki</span>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1481931098730-318b6f776db0?w=600&h=400&fit=crop" alt="Finger food">
-                    <div class="gallery-overlay">
-                        <span>Finger food</span>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&h=400&fit=crop" alt="Tort weselny">
-                    <div class="gallery-overlay">
-                        <span>Torty i desery</span>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1478145046317-39f10e56b5e9?w=600&h=400&fit=crop" alt="Elegancki catering">
-                    <div class="gallery-overlay">
-                        <span>Catering premium</span>
-                    </div>
-                </div>
+            </div>
+
+            <div class="cta-box" style="margin-top: 40px;">
+                <h3>Dołącz do grona naszych zadowolonych klientów!</h3>
+                <p>Skontaktuj się z nami już dziś i omówmy szczegóły Twojego wydarzenia.</p>
+                <a href="#kontakt" class="btn btn-primary">Skontaktuj się</a>
             </div>
         </div>
     </section>
 
     <!-- Kontakt -->
-    <section id="kontakt" class="section section-light">
+    <section id="kontakt" class="section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Kontakt</h2>
