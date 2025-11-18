@@ -156,16 +156,14 @@
                 <p class="section-subtitle">Nasze menu dostosowujemy do charakteru imprezy i Państwa oczekiwań</p>
             </div>
 
-            <div class="menu-tabs">
-                <button class="menu-tab active" data-menu="grill">Menu z Grilla</button>
-                <button class="menu-tab" data-menu="wigilia">Menu Wigilia</button>
-                <button class="menu-tab" data-menu="wielkanoc">Menu Wielkanoc</button>
-                <button class="menu-tab" data-menu="wedding">Menu Weselne</button>
-                <button class="menu-tab" data-menu="catering">Catering Zimny</button>
-            </div>
-
-            <!-- Menu z Grilla -->
-            <div class="menu-content active" id="menu-grill">
+            <div class="menu-accordion">
+                <!-- Menu z Grilla -->
+                <div class="menu-accordion-item active">
+                    <button class="menu-accordion-header">
+                        <span>Menu z Grilla</span>
+                        <span class="menu-accordion-icon">+</span>
+                    </button>
+                    <div class="menu-accordion-content">
                 <div class="menu-category">
                     <h3>Przystawki</h3>
                     <ul class="menu-list">
@@ -219,10 +217,16 @@
                         <li>Lody: sorbety owocowe + wanilia</li>
                     </ul>
                 </div>
-            </div>
+                    </div>
+                </div>
 
-            <!-- Menu Wigilia -->
-            <div class="menu-content" id="menu-wigilia">
+                <!-- Menu Wigilia -->
+                <div class="menu-accordion-item">
+                    <button class="menu-accordion-header">
+                        <span>Menu Wigilia</span>
+                        <span class="menu-accordion-icon">+</span>
+                    </button>
+                    <div class="menu-accordion-content">
                 <div class="menu-category">
                     <h3>Dania Ciepłe</h3>
                     <ul class="menu-list">
@@ -271,10 +275,16 @@
                         <li>Tort bezowy z bakaliami i mascarpone</li>
                     </ul>
                 </div>
-            </div>
+                    </div>
+                </div>
 
-            <!-- Menu Wielkanoc -->
-            <div class="menu-content" id="menu-wielkanoc">
+                <!-- Menu Wielkanoc -->
+                <div class="menu-accordion-item">
+                    <button class="menu-accordion-header">
+                        <span>Menu Wielkanoc</span>
+                        <span class="menu-accordion-icon">+</span>
+                    </button>
+                    <div class="menu-accordion-content">
                 <div class="menu-category">
                     <h3>Przystawki</h3>
                     <ul class="menu-list">
@@ -325,10 +335,16 @@
                         <li>Sernik, jabłecznik</li>
                     </ul>
                 </div>
-            </div>
+                    </div>
+                </div>
 
-            <!-- Menu Weselne -->
-            <div class="menu-content" id="menu-wedding">
+                <!-- Menu Weselne -->
+                <div class="menu-accordion-item">
+                    <button class="menu-accordion-header">
+                        <span>Menu Weselne</span>
+                        <span class="menu-accordion-icon">+</span>
+                    </button>
+                    <div class="menu-accordion-content">
                 <div class="menu-category">
                     <h3>Przystawki</h3>
                     <ul class="menu-list">
@@ -378,10 +394,16 @@
                         <li>Lody smażone w sosie wiśniowo-imbirowym z malinami</li>
                     </ul>
                 </div>
-            </div>
+                    </div>
+                </div>
 
-            <!-- Catering Zimny -->
-            <div class="menu-content" id="menu-catering">
+                <!-- Catering Zimny -->
+                <div class="menu-accordion-item">
+                    <button class="menu-accordion-header">
+                        <span>Catering Zimny</span>
+                        <span class="menu-accordion-icon">+</span>
+                    </button>
+                    <div class="menu-accordion-content">
                 <div class="menu-category">
                     <h3>Bufet Zimnych Zakąsek</h3>
                     <ul class="menu-list">
@@ -421,6 +443,8 @@
                         <li>Udziec z szynki pieczony w sosie bazylikowym</li>
                         <li>Karp wędzony w całości na sposób drwali</li>
                     </ul>
+                </div>
+                    </div>
                 </div>
             </div>
 

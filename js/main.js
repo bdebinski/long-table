@@ -76,25 +76,25 @@ window.addEventListener('scroll', () => {
 });
 
 // ========================================
-// Menu Tabs
+// Menu Accordion
 // ========================================
-const menuTabs = document.querySelectorAll('.menu-tab');
-const menuContents = document.querySelectorAll('.menu-content');
+const menuAccordionItems = document.querySelectorAll('.menu-accordion-item');
 
-menuTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        // Remove active class from all tabs and contents
-        menuTabs.forEach(t => t.classList.remove('active'));
-        menuContents.forEach(content => content.classList.remove('active'));
-        
-        // Add active class to clicked tab
-        tab.classList.add('active');
-        
-        // Show corresponding content
-        const menuType = tab.getAttribute('data-menu');
-        const targetContent = document.getElementById(`menu-${menuType}`);
-        if (targetContent) {
-            targetContent.classList.add('active');
+menuAccordionItems.forEach(item => {
+    const header = item.querySelector('.menu-accordion-header');
+
+    header.addEventListener('click', () => {
+        // Check if this item is already active
+        const isActive = item.classList.contains('active');
+
+        // Close all accordion items
+        menuAccordionItems.forEach(accordionItem => {
+            accordionItem.classList.remove('active');
+        });
+
+        // If the clicked item wasn't active, open it
+        if (!isActive) {
+            item.classList.add('active');
         }
     });
 });

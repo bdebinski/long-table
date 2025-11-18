@@ -459,42 +459,69 @@ ul {
 }
 
 /* ========================================
-   Menu Section
+   Menu Section - Accordion
 ======================================== */
-.menu-tabs {
+.menu-accordion {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 15px;
     margin-bottom: 50px;
 }
 
-.menu-tab {
-    padding: 12px 30px;
+.menu-accordion-item {
     background: var(--white);
     border: 2px solid var(--border-color);
-    color: var(--text-dark);
-    font-weight: 600;
-    font-size: 14px;
+    transition: var(--transition);
+}
+
+.menu-accordion-item:hover {
+    border-color: var(--primary-color);
+}
+
+.menu-accordion-header {
+    width: 100%;
+    padding: 20px 30px;
+    background: transparent;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     cursor: pointer;
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--text-dark);
+    text-align: left;
     transition: var(--transition);
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
-.menu-tab:hover,
-.menu-tab.active {
+.menu-accordion-item.active .menu-accordion-header {
     background: var(--primary-color);
     color: var(--white);
-    border-color: var(--primary-color);
 }
 
-.menu-content {
-    display: none;
+.menu-accordion-icon {
+    font-size: 24px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
 }
 
-.menu-content.active {
-    display: block;
+.menu-accordion-item.active .menu-accordion-icon {
+    transform: rotate(45deg);
+}
+
+.menu-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    padding: 0 30px;
+}
+
+.menu-accordion-item.active .menu-accordion-content {
+    max-height: 3000px;
+    padding: 30px;
+    transition: max-height 0.5s ease-in;
 }
 
 .menu-category {
@@ -1024,11 +1051,24 @@ ul {
     .section-title {
         font-size: 32px;
     }
-    
+
     .menu-list {
         columns: 1;
     }
-    
+
+    .menu-accordion-header {
+        padding: 15px 20px;
+        font-size: 16px;
+    }
+
+    .menu-accordion-content {
+        padding: 0 20px;
+    }
+
+    .menu-accordion-item.active .menu-accordion-content {
+        padding: 20px;
+    }
+
     .contact-wrapper {
         grid-template-columns: 1fr;
     }
