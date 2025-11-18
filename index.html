@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- reCAPTCHA script - uncomment when you have your site key -->
+    <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
 </head>
 <body>
     <!-- Navigation -->
@@ -158,7 +160,7 @@
 
             <div class="menu-accordion">
                 <!-- Menu z Grilla -->
-                <div class="menu-accordion-item active">
+                <div class="menu-accordion-item">
                     <button class="menu-accordion-header">
                         <span>Menu z Grilla</span>
                         <span class="menu-accordion-icon">+</span>
@@ -885,6 +887,10 @@
                     <img src="images/zestawyupominkowe/long-table-zestawy-upominkowe_018.jpg" alt="Zestawy prezentowe" loading="lazy">
                 </div>
             </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="gallery.html" class="btn btn-primary">Zobacz więcej zdjęć</a>
+            </div>
         </div>
     </section>
 
@@ -929,19 +935,24 @@
                         <div class="form-group">
                             <input type="text" id="name" name="name" placeholder="Imię i nazwisko *" required>
                         </div>
-                        
+
                         <div class="form-group">
                             <input type="email" id="email" name="email" placeholder="Email *" required>
                         </div>
-                        
+
                         <div class="form-group">
                             <input type="tel" id="phone" name="phone" placeholder="Telefon">
                         </div>
-                        
+
                         <div class="form-group">
                             <textarea id="message" name="message" rows="5" placeholder="Wiadomość *" required></textarea>
                         </div>
-                        
+
+                        <!-- reCAPTCHA placeholder - add your site key here -->
+                        <div class="form-group">
+                            <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY_HERE"></div>
+                        </div>
+
                         <button type="submit" class="btn btn-primary btn-full">Wyślij wiadomość</button>
                     </form>
                 </div>

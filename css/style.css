@@ -872,6 +872,11 @@ ul {
     min-height: 120px;
 }
 
+.g-recaptcha {
+    display: flex;
+    justify-content: center;
+}
+
 /* ========================================
    Footer
 ======================================== */
@@ -890,11 +895,80 @@ ul {
 /* ========================================
    Gallery Styles
 ======================================== */
+.gallery-hero {
+    height: 40vh;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    position: relative;
+    margin-top: 70px;
+}
+
+.gallery-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    padding: 12px 30px;
+    background: var(--white);
+    border: 2px solid var(--border-color);
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+}
+
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     margin-top: 40px;
+}
+
+.gallery-full {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+}
+
+.load-more-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid var(--light-gray);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
 }
 
 .gallery-main {
@@ -1156,5 +1230,14 @@ ul {
     .carousel-dots .dot {
         width: 10px;
         height: 10px;
+    }
+
+    .gallery-full {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-btn {
+        font-size: 12px;
+        padding: 10px 20px;
     }
 }
