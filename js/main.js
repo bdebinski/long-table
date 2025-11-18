@@ -76,25 +76,25 @@ window.addEventListener('scroll', () => {
 });
 
 // ========================================
-// Menu Tabs
+// Menu Accordion
 // ========================================
-const menuTabs = document.querySelectorAll('.menu-tab');
-const menuContents = document.querySelectorAll('.menu-content');
+const menuAccordionItems = document.querySelectorAll('.menu-accordion-item');
 
-menuTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        // Remove active class from all tabs and contents
-        menuTabs.forEach(t => t.classList.remove('active'));
-        menuContents.forEach(content => content.classList.remove('active'));
-        
-        // Add active class to clicked tab
-        tab.classList.add('active');
-        
-        // Show corresponding content
-        const menuType = tab.getAttribute('data-menu');
-        const targetContent = document.getElementById(`menu-${menuType}`);
-        if (targetContent) {
-            targetContent.classList.add('active');
+menuAccordionItems.forEach(item => {
+    const header = item.querySelector('.menu-accordion-header');
+
+    header.addEventListener('click', () => {
+        // Check if this item is already active
+        const isActive = item.classList.contains('active');
+
+        // Close all accordion items
+        menuAccordionItems.forEach(accordionItem => {
+            accordionItem.classList.remove('active');
+        });
+
+        // If the clicked item wasn't active, open it
+        if (!isActive) {
+            item.classList.add('active');
         }
     });
 });
@@ -171,6 +171,157 @@ window.addEventListener('load', () => {
         document.body.style.transition = 'opacity 0.5s ease';
         document.body.style.opacity = '1';
     }, 100);
+});
+
+// ========================================
+// Hero Carousel
+// ========================================
+const carouselSlides = document.querySelectorAll('.carousel-slide');
+const carouselDots = document.querySelectorAll('.carousel-dots .dot');
+const prevBtn = document.querySelector('.carousel-btn.prev');
+const nextBtn = document.querySelector('.carousel-btn.next');
+
+let currentSlide = 0;
+let carouselInterval;
+
+function showSlide(index) {
+    // Remove active class from all slides and dots
+    carouselSlides.forEach(slide => slide.classList.remove('active'));
+    carouselDots.forEach(dot => dot.classList.remove('active'));
+
+    // Add active class to current slide and dot
+    carouselSlides[index].classList.add('active');
+    carouselDots[index].classList.add('active');
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % carouselSlides.length;
+    showSlide(currentSlide);
+}
+
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + carouselSlides.length) % carouselSlides.length;
+    showSlide(currentSlide);
+}
+
+function startCarousel() {
+    carouselInterval = setInterval(nextSlide, 5000);
+}
+
+function stopCarousel() {
+    clearInterval(carouselInterval);
+}
+
+// Event listeners
+if (prevBtn && nextBtn) {
+    prevBtn.addEventListener('click', () => {
+        prevSlide();
+        stopCarousel();
+        startCarousel();
+    });
+
+    nextBtn.addEventListener('click', () => {
+        nextSlide();
+        stopCarousel();
+        startCarousel();
+    });
+}
+
+carouselDots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        currentSlide = index;
+        showSlide(currentSlide);
+        stopCarousel();
+        startCarousel();
+    });
+});
+
+// Start carousel on load
+if (carouselSlides.length > 0) {
+    startCarousel();
+}
+
+// ========================================
+// Gallery Lightbox
+// ========================================
+const lightbox = document.getElementById('lightbox');
+const lightboxImage = document.getElementById('lightboxImage');
+const lightboxClose = document.getElementById('lightboxClose');
+const lightboxPrev = document.getElementById('lightboxPrev');
+const lightboxNext = document.getElementById('lightboxNext');
+const galleryItems = document.querySelectorAll('.gallery-item img');
+
+let currentImageIndex = 0;
+let galleryImagesArray = [];
+
+// Populate gallery images array
+galleryItems.forEach((img, index) => {
+    galleryImagesArray.push({
+        src: img.src,
+        alt: img.alt
+    });
+
+    img.addEventListener('click', () => {
+        openLightbox(index);
+    });
+});
+
+function openLightbox(index) {
+    currentImageIndex = index;
+    lightboxImage.src = galleryImagesArray[index].src;
+    lightboxImage.alt = galleryImagesArray[index].alt;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+function showPrevImage() {
+    currentImageIndex = (currentImageIndex - 1 + galleryImagesArray.length) % galleryImagesArray.length;
+    lightboxImage.src = galleryImagesArray[currentImageIndex].src;
+    lightboxImage.alt = galleryImagesArray[currentImageIndex].alt;
+}
+
+function showNextImage() {
+    currentImageIndex = (currentImageIndex + 1) % galleryImagesArray.length;
+    lightboxImage.src = galleryImagesArray[currentImageIndex].src;
+    lightboxImage.alt = galleryImagesArray[currentImageIndex].alt;
+}
+
+// Event listeners
+if (lightboxClose) {
+    lightboxClose.addEventListener('click', closeLightbox);
+}
+
+if (lightboxPrev) {
+    lightboxPrev.addEventListener('click', showPrevImage);
+}
+
+if (lightboxNext) {
+    lightboxNext.addEventListener('click', showNextImage);
+}
+
+// Close lightbox on background click
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        closeLightbox();
+    }
+});
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (lightbox.classList.contains('active')) {
+        if (e.key === 'Escape') {
+            closeLightbox();
+        } else if (e.key === 'ArrowLeft') {
+            showPrevImage();
+        } else if (e.key === 'ArrowRight') {
+            showNextImage();
+        }
+    }
 });
 
 // ========================================
