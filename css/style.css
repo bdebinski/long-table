@@ -395,6 +395,90 @@ ul {
 }
 
 /* ========================================
+   Quick Services Overview
+======================================== */
+.quick-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.quick-service-card {
+    background: var(--white);
+    padding: 35px 25px;
+    border: 2px solid var(--border-color);
+    text-align: center;
+    transition: var(--transition);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    display: block;
+}
+
+.quick-service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 3px;
+    background: var(--primary-color);
+    transition: left 0.3s ease;
+}
+
+.quick-service-card:hover::before {
+    left: 0;
+}
+
+.quick-service-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(196, 30, 58, 0.15);
+}
+
+.quick-service-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.quick-service-card h3 {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+}
+
+.quick-service-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.quick-service-link {
+    display: inline-block;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: var(--transition);
+}
+
+.quick-service-link::after {
+    content: ' →';
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.quick-service-card:hover .quick-service-link::after {
+    transform: translateX(5px);
+}
+
+/* ========================================
    Offer Grid
 ======================================== */
 .offer-grid {
@@ -1273,7 +1357,8 @@ ul {
     
     .theme-grid,
     .dessert-grid,
-    .ice-options {
+    .ice-options,
+    .quick-services-grid {
         grid-template-columns: 1fr;
     }
     
