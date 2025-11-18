@@ -446,16 +446,24 @@ ul {
     text-align: center;
 }
 
+.cta-box * {
+    color: var(--white);
+}
+
 .cta-box h3 {
     font-family: var(--font-heading);
     font-size: 28px;
     margin-bottom: 15px;
 }
 
+.cta-box h4 {
+    font-family: var(--font-heading);
+}
+
 .cta-box p {
     font-size: 16px;
     line-height: 1.6;
-    opacity: 0.9;
+    opacity: 1;
 }
 
 /* ========================================
@@ -622,6 +630,14 @@ ul {
     line-height: 1.8;
     color: var(--text-light);
     margin-bottom: 20px;
+}
+
+/* Zabezpieczenie dla tekstu na czerwonym tle */
+.cta-box .ice-content p,
+.cta-box .dessert-card p,
+[style*="background: var(--primary-color)"] .ice-content p,
+[style*="background: var(--primary-color)"] .dessert-card p {
+    color: var(--white);
 }
 
 .ice-offer {

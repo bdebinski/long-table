@@ -1,0 +1,45 @@
+{
+  "description": "Konfiguracja kategorii galerii - mapowanie folderów na kategorie",
+  "categories": {
+    "all": {
+      "name": "Wszystkie",
+      "display_name": "Wszystkie",
+      "folders": ["nasze_propozycje", "galeria"]
+    },
+    "catering": {
+      "name": "Catering",
+      "display_name": "Catering",
+      "folders": ["nasze_propozycje"]
+    },
+    "events": {
+      "name": "Imprezy",
+      "display_name": "Imprezy",
+      "folders": ["Pirotechnika", "AkademiaBaru", "palac"]
+    },
+    "food": {
+      "name": "Potrawy",
+      "display_name": "Potrawy",
+      "folders": ["menu"]
+    },
+    "ice-sculptures": {
+      "name": "Rzeźby lodowe",
+      "display_name": "Rzeźby Lodowe",
+      "folders": ["Lodowe", "rzezbylodowe"]
+    },
+    "desserts": {
+      "name": "Desery",
+      "display_name": "Desery",
+      "folders": ["czekoladowafontanna"]
+    },
+    "gifts": {
+      "name": "Zestawy",
+      "display_name": "Zestawy Upominkowe",
+      "folders": ["zestawyupominkowe"]
+    }
+  },
+  "settings": {
+    "recursive": true,
+    "image_extensions": [".jpg", ".jpeg", ".png", ".gif", ".webp"],
+    "ignore_files": ["index.html", ".DS_Store", "Thumbs.db"]
+  }
+}
