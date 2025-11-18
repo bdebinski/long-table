@@ -309,11 +309,15 @@ ul {
 }
 
 .btn-primary:hover {
-    background: transparent;
+    background: var(--primary-color);
     color: var(--white);
-    border-color: var(--white);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(196, 30, 58, 0.3);
 }
 
+/* IMPORTANT: .btn-secondary is designed for dark backgrounds only (hero sections, overlays)
+   Do NOT use on light backgrounds as it has white text on transparent background */
 .btn-secondary {
     background: transparent;
     color: var(--white);
