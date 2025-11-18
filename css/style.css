@@ -632,6 +632,14 @@ ul {
     margin-bottom: 20px;
 }
 
+/* Zabezpieczenie dla tekstu na czerwonym tle */
+.cta-box .ice-content p,
+.cta-box .dessert-card p,
+[style*="background: var(--primary-color)"] .ice-content p,
+[style*="background: var(--primary-color)"] .dessert-card p {
+    color: var(--white);
+}
+
 .ice-offer {
     margin: 50px 0;
 }
