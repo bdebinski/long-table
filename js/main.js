@@ -174,6 +174,157 @@ window.addEventListener('load', () => {
 });
 
 // ========================================
+// Hero Carousel
+// ========================================
+const carouselSlides = document.querySelectorAll('.carousel-slide');
+const carouselDots = document.querySelectorAll('.carousel-dots .dot');
+const prevBtn = document.querySelector('.carousel-btn.prev');
+const nextBtn = document.querySelector('.carousel-btn.next');
+
+let currentSlide = 0;
+let carouselInterval;
+
+function showSlide(index) {
+    // Remove active class from all slides and dots
+    carouselSlides.forEach(slide => slide.classList.remove('active'));
+    carouselDots.forEach(dot => dot.classList.remove('active'));
+
+    // Add active class to current slide and dot
+    carouselSlides[index].classList.add('active');
+    carouselDots[index].classList.add('active');
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % carouselSlides.length;
+    showSlide(currentSlide);
+}
+
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + carouselSlides.length) % carouselSlides.length;
+    showSlide(currentSlide);
+}
+
+function startCarousel() {
+    carouselInterval = setInterval(nextSlide, 5000);
+}
+
+function stopCarousel() {
+    clearInterval(carouselInterval);
+}
+
+// Event listeners
+if (prevBtn && nextBtn) {
+    prevBtn.addEventListener('click', () => {
+        prevSlide();
+        stopCarousel();
+        startCarousel();
+    });
+
+    nextBtn.addEventListener('click', () => {
+        nextSlide();
+        stopCarousel();
+        startCarousel();
+    });
+}
+
+carouselDots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        currentSlide = index;
+        showSlide(currentSlide);
+        stopCarousel();
+        startCarousel();
+    });
+});
+
+// Start carousel on load
+if (carouselSlides.length > 0) {
+    startCarousel();
+}
+
+// ========================================
+// Gallery Lightbox
+// ========================================
+const lightbox = document.getElementById('lightbox');
+const lightboxImage = document.getElementById('lightboxImage');
+const lightboxClose = document.getElementById('lightboxClose');
+const lightboxPrev = document.getElementById('lightboxPrev');
+const lightboxNext = document.getElementById('lightboxNext');
+const galleryItems = document.querySelectorAll('.gallery-item img');
+
+let currentImageIndex = 0;
+let galleryImagesArray = [];
+
+// Populate gallery images array
+galleryItems.forEach((img, index) => {
+    galleryImagesArray.push({
+        src: img.src,
+        alt: img.alt
+    });
+
+    img.addEventListener('click', () => {
+        openLightbox(index);
+    });
+});
+
+function openLightbox(index) {
+    currentImageIndex = index;
+    lightboxImage.src = galleryImagesArray[index].src;
+    lightboxImage.alt = galleryImagesArray[index].alt;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+function showPrevImage() {
+    currentImageIndex = (currentImageIndex - 1 + galleryImagesArray.length) % galleryImagesArray.length;
+    lightboxImage.src = galleryImagesArray[currentImageIndex].src;
+    lightboxImage.alt = galleryImagesArray[currentImageIndex].alt;
+}
+
+function showNextImage() {
+    currentImageIndex = (currentImageIndex + 1) % galleryImagesArray.length;
+    lightboxImage.src = galleryImagesArray[currentImageIndex].src;
+    lightboxImage.alt = galleryImagesArray[currentImageIndex].alt;
+}
+
+// Event listeners
+if (lightboxClose) {
+    lightboxClose.addEventListener('click', closeLightbox);
+}
+
+if (lightboxPrev) {
+    lightboxPrev.addEventListener('click', showPrevImage);
+}
+
+if (lightboxNext) {
+    lightboxNext.addEventListener('click', showNextImage);
+}
+
+// Close lightbox on background click
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        closeLightbox();
+    }
+});
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (lightbox.classList.contains('active')) {
+        if (e.key === 'Escape') {
+            closeLightbox();
+        } else if (e.key === 'ArrowLeft') {
+            showPrevImage();
+        } else if (e.key === 'ArrowRight') {
+            showNextImage();
+        }
+    }
+});
+
+// ========================================
 // Console Info
 // ========================================
 console.log('%cLong Table - Agencja Cateringowo-Artystyczna', 'font-size: 16px; font-weight: bold; color: #C41E3A;');

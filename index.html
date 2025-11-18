@@ -29,18 +29,24 @@
                     <li><a href="#home" class="nav-link">Home</a></li>
                     <li><a href="#o-nas" class="nav-link">O nas</a></li>
                     <li><a href="#oferta" class="nav-link">Oferta</a></li>
-                    <li><a href="#menu" class="nav-link">Przykładowe Menu</a></li>
-                    <li><a href="#imprezy" class="nav-link">Imprezy Tematyczne</a></li>
+                    <li><a href="#menu" class="nav-link">Menu</a></li>
+                    <li><a href="#imprezy" class="nav-link">Imprezy</a></li>
                     <li><a href="#rzezby" class="nav-link">Rzeźby Lodowe</a></li>
-                    <li><a href="#wypozyczalnia" class="nav-link">Wypożyczalnia</a></li>
+                    <li><a href="#galeria" class="nav-link">Galeria</a></li>
                     <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Carousel -->
     <section id="home" class="hero">
+        <div class="hero-carousel">
+            <div class="carousel-slide active" style="background-image: url('images/carusel/long-table.jpg')"></div>
+            <div class="carousel-slide" style="background-image: url('images/carusel/lodowe.jpg')"></div>
+            <div class="carousel-slide" style="background-image: url('images/carusel/akademia-baru.jpg')"></div>
+            <div class="carousel-slide" style="background-image: url('images/carusel/long-tables.jpg')"></div>
+        </div>
         <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
@@ -52,6 +58,14 @@
                     <a href="#kontakt" class="btn btn-secondary">Skontaktuj się</a>
                 </div>
             </div>
+        </div>
+        <button class="carousel-btn prev" aria-label="Poprzedni">&lt;</button>
+        <button class="carousel-btn next" aria-label="Następny">&gt;</button>
+        <div class="carousel-dots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+            <span class="dot" data-slide="3"></span>
         </div>
     </section>
 
@@ -413,6 +427,31 @@
             <div class="menu-note">
                 <p><strong>Uwaga:</strong> Wszystkie menu mogą być modyfikowane według Państwa życzeń i dostosowane do charakteru imprezy.</p>
             </div>
+
+            <!-- Galeria Menu -->
+            <div class="section-header" style="margin-top: 60px;">
+                <h3 class="section-subtitle">Nasze Dania w Obiektywie</h3>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/menu/1.jpg" alt="Danie cateringowe" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/menu/2.jpg" alt="Danie cateringowe" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/menu/10.jpg" alt="Danie cateringowe" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/menu/14.jpg" alt="Danie cateringowe" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/menu/16.jpg" alt="Danie cateringowe" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/menu/24.jpg" alt="Danie cateringowe" loading="lazy">
+                </div>
+            </div>
         </div>
     </section>
 
@@ -512,6 +551,37 @@
                     <p>Jeżeli jeszcze nie widziałeś pokazu rzeźbienia koniecznie skorzystaj z naszej oferty!</p>
                     <a href="https://lodowe.com.pl/" target="_blank" rel="noopener" class="btn btn-primary">Zobacz lodowe.com.pl</a>
                 </div>
+
+                <!-- Galeria Rzeźb Lodowych -->
+                <div class="section-header" style="margin-top: 60px;">
+                    <h3 class="section-subtitle">Nasze Lodowe Arcydzieła</h3>
+                </div>
+                <div class="gallery-grid gallery-ice">
+                    <div class="gallery-item">
+                        <img src="images/Lodowe/image111.jpg" alt="Rzeźba lodowa" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/Lodowe/image112.jpg" alt="Rzeźba lodowa" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/Lodowe/image113.jpg" alt="Rzeźba lodowa" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/Lodowe/image114.jpg" alt="Rzeźba lodowa" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/Lodowe/image115.jpg" alt="Rzeźba lodowa" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/Lodowe/image116.jpg" alt="Rzeźba lodowa" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/Lodowe/image117.jpg" alt="Rzeźba lodowa" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/Lodowe/image118.jpg" alt="Rzeźba lodowa" loading="lazy">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -545,6 +615,31 @@
 
             <div class="cta-box" style="margin-top: 40px;">
                 <p><strong>Mała fontanna to znakomity pomysł na prezent!</strong> Jest estetycznie wystylizowana, łatwa w obsłudze i prawie bezszelestna.</p>
+            </div>
+
+            <!-- Galeria Fontanny Czekoladowej -->
+            <div class="section-header" style="margin-top: 60px;">
+                <h3 class="section-subtitle">Nasze Słodkie Atrakcje</h3>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/czekoladowafontanna/image114.jpg" alt="Fontanna czekoladowa" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/czekoladowafontanna/image115.jpg" alt="Fontanna czekoladowa" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/czekoladowafontanna/image116.jpg" alt="Fontanna czekoladowa" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/czekoladowafontanna/image117.jpg" alt="Fontanna czekoladowa" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/czekoladowafontanna/image118.jpg" alt="Fontanna czekoladowa" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/zestawyupominkowe/long-table-zestawy-upominkowe_003.jpg" alt="Zestawy upominkowe" loading="lazy">
+                </div>
             </div>
         </div>
     </section>
@@ -719,6 +814,47 @@
         </div>
     </section>
 
+    <!-- Galeria Główna -->
+    <section id="galeria" class="section section-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Galeria</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">Zdjęcia z naszych imprez i wydarzeń</p>
+            </div>
+
+            <div class="gallery-grid gallery-main">
+                <div class="gallery-item">
+                    <img src="images/longtable_096.jpg" alt="Impreza Long Table" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/longtable_124.jpg" alt="Impreza Long Table" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/longtable-06-20__020.jpg" alt="Catering Long Table" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/longtable-06-20__021.jpg" alt="Catering Long Table" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/longtable-29-06_008.jpg" alt="Event Long Table" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/longtable-29-06_031.jpg" alt="Event Long Table" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/longtable-06-21__011.jpg" alt="Impreza Long Table" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/longtablezestawyupominkowe_005.jpg" alt="Zestawy upominkowe" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/longtablezestawyupominkowe_007.jpg" alt="Zestawy upominkowe" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Kontakt -->
     <section id="kontakt" class="section">
         <div class="container">
@@ -789,6 +925,16 @@
             </div>
         </div>
     </footer>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose">&times;</button>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev">&lt;</button>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightboxImage">
+        </div>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext">&gt;</button>
+    </div>
 
     <script src="js/main.js"></script>
 </body>
