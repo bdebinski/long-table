@@ -89,6 +89,9 @@ ul {
     justify-content: space-between;
     align-items: center;
 }
+.logo {
+    height: 32px;
+}
 
 .logo-text {
     font-family: var(--font-heading);
