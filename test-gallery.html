@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Galerii</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f5f5f5; }
+        .test-section { background: white; padding: 20px; margin: 20px 0; border-radius: 8px; }
+        .success { color: green; }
+        .error { color: red; }
+        .info { color: blue; }
+        img { max-width: 200px; margin: 10px; border: 2px solid #ddd; }
+        pre { background: #f0f0f0; padding: 10px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <h1>🔍 Test Galerii Long Table</h1>
+
+    <div class="test-section">
+        <h2>1. Test ładowania pliku gallery-data.js</h2>
+        <div id="test1">Sprawdzanie...</div>
+    </div>
+
+    <div class="test-section">
+        <h2>2. Statystyki danych</h2>
+        <div id="test2">Sprawdzanie...</div>
+    </div>
+
+    <div class="test-section">
+        <h2>3. Test ładowania pierwszych 3 zdjęć</h2>
+        <div id="test3">Sprawdzanie...</div>
+    </div>
+
+    <div class="test-section">
+        <h2>4. Wszystkie kategorie i ilość zdjęć</h2>
+        <div id="test4">Sprawdzanie...</div>
+    </div>
+
+    <script src="js/gallery-data.js"></script>
+    <script>
+        // Test 1: Czy plik się załadował
+        const test1 = document.getElementById('test1');
+        if (typeof galleryData === 'undefined') {
+            test1.innerHTML = '<p class="error">❌ BŁĄD: Plik gallery-data.js nie załadował się!</p>' +
+                '<p>Możliwe przyczyny:</p>' +
+                '<ul>' +
+                '<li>Otwierasz stronę przez file:// - użyj serwera HTTP (np. python -m http.server)</li>' +
+                '<li>Plik js/gallery-data.js nie istnieje</li>' +
+                '<li>Błąd w konsoli przeglądarki (F12)</li>' +
+                '</ul>';
+        } else {
+            test1.innerHTML = '<p class="success">✅ Plik gallery-data.js załadowany poprawnie!</p>';
+        }
+
+        // Test 2: Statystyki
+        const test2 = document.getElementById('test2');
+        if (typeof galleryData !== 'undefined') {
+            const categories = Object.keys(galleryData);
+            const totalImages = typeof allGalleryImages !== 'undefined' ? allGalleryImages.length : 0;
+
+            test2.innerHTML =
+                '<p class="success">✅ galleryData dostępne</p>' +
+                '<p>Kategorie: <strong>' + categories.join(', ') + '</strong></p>' +
+                '<p>Wszystkich zdjęć: <strong>' + totalImages + '</strong></p>';
+        } else {
+            test2.innerHTML = '<p class="error">❌ Brak danych (galleryData nie załadowane)</p>';
+        }
+
+        // Test 3: Ładowanie zdjęć
+        const test3 = document.getElementById('test3');
+        if (typeof allGalleryImages !== 'undefined' && allGalleryImages.length > 0) {
+            let html = '<p class="success">✅ Próba załadowania pierwszych 3 zdjęć:</p>';
+
+            for (let i = 0; i < Math.min(3, allGalleryImages.length); i++) {
+                const img = allGalleryImages[i];
+                html += '<div style="display: inline-block; margin: 10px; text-align: center;">';
+                html += '<img src="' + img.path + '" alt="' + img.filename + '" ';
+                html += 'onerror="this.style.border=\'2px solid red\'; this.alt=\'❌ Nie załadowano\'">';
+                html += '<p style="font-size: 12px;">' + img.filename + '</p>';
+                html += '<p style="font-size: 10px; color: gray;">' + img.path + '</p>';
+                html += '</div>';
+            }
+
+            test3.innerHTML = html;
+        } else {
+            test3.innerHTML = '<p class="error">❌ Brak zdjęć do załadowania</p>';
+        }
+
+        // Test 4: Lista kategorii
+        const test4 = document.getElementById('test4');
+        if (typeof galleryData !== 'undefined') {
+            let html = '';
+            for (const [category, images] of Object.entries(galleryData)) {
+                html += '<p><strong>' + category + ':</strong> ' + images.length + ' zdjęć</p>';
+                if (images.length > 0) {
+                    html += '<pre style="font-size: 11px;">' + JSON.stringify(images[0], null, 2) + '</pre>';
+                }
+            }
+            test4.innerHTML = html;
+        } else {
+            test4.innerHTML = '<p class="error">❌ Brak danych</p>';
+        }
+
+        // Wypisz błędy w konsoli
+        console.log('=== DIAGNOSTIC INFO ===');
+        console.log('galleryData defined:', typeof galleryData !== 'undefined');
+        console.log('allGalleryImages defined:', typeof allGalleryImages !== 'undefined');
+        if (typeof galleryData !== 'undefined') {
+            console.log('Categories:', Object.keys(galleryData));
+        }
+        if (typeof allGalleryImages !== 'undefined') {
+            console.log('Total images:', allGalleryImages.length);
+            console.log('First image:', allGalleryImages[0]);
+        }
+    </script>
+</body>
+</html>
