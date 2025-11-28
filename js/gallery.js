@@ -7,21 +7,60 @@ const imagesPerLoad = 24; // Load 24 images at a time
 let currentFilter = 'all';
 let currentImages = []; // Active images based on filter
 
-const galleryGrid = document.getElementById('galleryGrid');
-const loadMoreBtn = document.getElementById('loadMoreBtn');
-const loadMoreContainer = document.getElementById('loadMoreContainer');
-const loadingSpinner = document.getElementById('loadingSpinner');
-const filterBtns = document.querySelectorAll('.filter-btn');
+let galleryGrid;
+let loadMoreBtn;
+let loadMoreContainer;
+let loadingSpinner;
+let filterBtns;
 
 // Initialize gallery
 function initGallery() {
+    console.log('Initializing gallery...');
+
     // Check if galleryData is loaded
     if (typeof galleryData === 'undefined') {
         console.error('gallery-data.js not loaded!');
         return;
     }
 
-    // Set initial images
+    console.log('galleryData loaded, total images:', allGalleryImages ? allGalleryImages.length : 0);
+
+    // Get DOM elements
+    galleryGrid = document.getElementById('galleryGrid');
+    loadMoreBtn = document.getElementById('loadMoreBtn');
+    loadMoreContainer = document.getElementById('loadMoreContainer');
+    loadingSpinner = document.getElementById('loadingSpinner');
+    filterBtns = document.querySelectorAll('.filter-btn');
+
+    if (!galleryGrid) {
+        console.error('galleryGrid element not found!');
+        return;
+    }
+
+    // Load More button event
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', () => {
+            loadImages();
+        });
+    }
+
+    // Filter buttons
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Update active button
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Reset and reload
+            currentFilter = btn.getAttribute('data-filter');
+            currentIndex = 0;
+            galleryGrid.innerHTML = '';
+            updateCurrentImages();
+            loadImages();
+        });
+    });
+
+    // Set initial images and load
     updateCurrentImages();
     loadImages();
 }
@@ -40,32 +79,12 @@ function updateCurrentImages() {
     } else {
         currentImages = allGalleryImages || [];
     }
+    console.log('Filter:', currentFilter, '- Images:', currentImages.length);
 }
-
-// Load More button event
-if (loadMoreBtn) {
-    loadMoreBtn.addEventListener('click', () => {
-        loadImages();
-    });
-}
-
-// Filter buttons
-filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        // Update active button
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        // Reset and reload
-        currentFilter = btn.getAttribute('data-filter');
-        currentIndex = 0;
-        galleryGrid.innerHTML = '';
-        updateCurrentImages();
-        loadImages();
-    });
-});
 
 function loadImages() {
+    console.log('loadImages() called - currentIndex:', currentIndex, 'total:', currentImages.length);
+
     // Show loading spinner
     if (loadingSpinner) {
         loadingSpinner.style.display = 'flex';
@@ -79,6 +98,7 @@ function loadImages() {
     // Simulate loading delay for smooth UX
     setTimeout(() => {
         const endIndex = Math.min(currentIndex + imagesPerLoad, currentImages.length);
+        console.log('Loading images from', currentIndex, 'to', endIndex);
 
         for (let i = currentIndex; i < endIndex; i++) {
             const imageData = currentImages[i];
@@ -103,6 +123,7 @@ function loadImages() {
             galleryGrid.appendChild(galleryItem);
         }
 
+        console.log('Loaded', (endIndex - currentIndex), 'images');
         currentIndex = endIndex;
 
         // Hide loading spinner
