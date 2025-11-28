@@ -60,6 +60,9 @@ function initGallery() {
         });
     });
 
+    // Setup lightbox navigation for gallery
+    setupLightboxNavigation();
+
     // Set initial images and load
     updateCurrentImages();
     loadImages();
@@ -163,28 +166,30 @@ function openGalleryLightbox(index) {
     }
 }
 
-// Update lightbox navigation for gallery page
-const lightboxPrev = document.getElementById('lightboxPrev');
-const lightboxNext = document.getElementById('lightboxNext');
+// Setup lightbox navigation for gallery page
+function setupLightboxNavigation() {
+    const lightboxPrevBtn = document.getElementById('lightboxPrev');
+    const lightboxNextBtn = document.getElementById('lightboxNext');
 
-if (lightboxPrev) {
-    lightboxPrev.addEventListener('click', () => {
-        if (window.currentGalleryIndex !== undefined && currentImages.length > 0) {
-            window.currentGalleryIndex = (window.currentGalleryIndex - 1 + currentImages.length) % currentImages.length;
-            const imageData = currentImages[window.currentGalleryIndex];
-            document.getElementById('lightboxImage').src = imageData.path;
-        }
-    });
-}
+    if (lightboxPrevBtn) {
+        lightboxPrevBtn.addEventListener('click', () => {
+            if (window.currentGalleryIndex !== undefined && currentImages.length > 0) {
+                window.currentGalleryIndex = (window.currentGalleryIndex - 1 + currentImages.length) % currentImages.length;
+                const imageData = currentImages[window.currentGalleryIndex];
+                document.getElementById('lightboxImage').src = imageData.path;
+            }
+        });
+    }
 
-if (lightboxNext) {
-    lightboxNext.addEventListener('click', () => {
-        if (window.currentGalleryIndex !== undefined && currentImages.length > 0) {
-            window.currentGalleryIndex = (window.currentGalleryIndex + 1) % currentImages.length;
-            const imageData = currentImages[window.currentGalleryIndex];
-            document.getElementById('lightboxImage').src = imageData.path;
-        }
-    });
+    if (lightboxNextBtn) {
+        lightboxNextBtn.addEventListener('click', () => {
+            if (window.currentGalleryIndex !== undefined && currentImages.length > 0) {
+                window.currentGalleryIndex = (window.currentGalleryIndex + 1) % currentImages.length;
+                const imageData = currentImages[window.currentGalleryIndex];
+                document.getElementById('lightboxImage').src = imageData.path;
+            }
+        });
+    }
 }
 
 // Initialize when DOM is ready
