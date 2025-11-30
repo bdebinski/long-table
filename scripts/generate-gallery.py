@@ -53,6 +53,29 @@ def scan_images(images_dir: Path) -> Dict[str, List[Dict]]:
     """
     categories = {}
 
+    # NAJPIERW: Skanuj główny folder images/ (pliki bezpośrednio w images/)
+    print("🔍 Skanuję główny folder images/...")
+    main_images = []
+    for file in sorted(images_dir.iterdir()):
+        if file.is_file() and is_image_file(file.name):
+            # Ignoruj pliki specjalne
+            if file.name in ['index.html', 'logolt2.png', 'logo.png']:
+                continue
+
+            main_images.append({
+                'filename': file.name,
+                'path': f'images/{file.name}',
+                'category': 'all',
+                'folder': 'main',
+            })
+
+    if main_images:
+        if 'all' not in categories:
+            categories['all'] = []
+        categories['all'].extend(main_images)
+        print(f"✅ Znaleziono {len(main_images)} zdjęć w głównym folderze images/")
+
+    # NASTĘPNIE: Skanuj podfoldery
     for category_folder, category_name in CATEGORY_MAPPING.items():
         folder_path = images_dir / category_folder
 
