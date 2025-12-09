@@ -18,15 +18,12 @@ from typing import Dict, List
 
 # Konfiguracja - mapowanie folderów na kategorie
 CATEGORY_MAPPING = {
-    'nasze_propozycje': 'all',
-    'menu': 'food',
-    'Lodowe': 'ice-sculptures',
-    'czekoladowafontanna': 'desserts',
+    'fingerfood': 'fingerfood',
+    'potrawy': 'food',
+    'rzezbylodowe': 'ice-sculptures',
+    'desery': 'desserts',
     'zestawyupominkowe': 'gifts',
-    'Pirotechnika': 'events',
-    'AkademiaBaru': 'events',
-    'galeria': 'all',
-    'palac': 'events',
+    'wystroj': 'events',
 }
 
 # Wspierane rozszerzenia obrazów
