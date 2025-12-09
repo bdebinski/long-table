@@ -79,7 +79,8 @@ function updateCurrentImages() {
     } else if (galleryData[currentFilter]) {
         // Use specific category
         currentImages = galleryData[currentFilter] || [];
-    } else {
+    } 
+    else {
         currentImages = allGalleryImages || [];
     }
     console.log('Filter:', currentFilter, '- Images:', currentImages.length);
